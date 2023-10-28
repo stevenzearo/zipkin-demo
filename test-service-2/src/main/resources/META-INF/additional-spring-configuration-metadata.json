@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "management.tracing.sampling.probability",
+      "type": "java.lang.String",
+      "description": "Description for management.tracing.sampling.probability."
+  }
+] }

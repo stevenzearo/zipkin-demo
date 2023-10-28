@@ -1,0 +1,29 @@
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    brave:
+      span-joining-supported: true
+    propagation:
+      consume: B3_MULTI
+      produce: B3_MULTI
+
+  zipkin:
+    tracing:
+      server:
+        endpoint: "http://localhost:9411/api/v2/spans"
+  httpexchanges:
+    recording:
+      enabled: true
+
+spring:
+  application:
+    name: "test-service-1"
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+  pattern:
+    level: "[%5p ${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+server:
+  port: 8501

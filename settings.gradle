@@ -1,0 +1,5 @@
+rootProject.name = 'zipkin'
+include 'test-service-1',
+        'test-service-interface',
+        'test-service-2'
+
